@@ -1,0 +1,29 @@
+<div ng-controller="PreferencesCtrl" ng-init="init()">
+    <h1>Twoja ocena</h1>
+<div ng-repeat="pair in pairs" class="row">
+    <form class="form-horizontal">
+        <div class="col-sm-3 control-label">
+            <h3>{{pair.candidate1.name}} {{pair.candidate1.surname}}</h3>
+            <p ng-bind-html="pair.candidate1.description"></p>
+        </div>
+        <div class="form-group col-sm-6" style="padding: 50px">
+            <label class="col-sm-1 control-label">{{100 - pair.rate}}</label>
+            <div class="col-sm-10">
+                <input ng-model="pair.rate" type="range" name="points" min="0" max="100">
+            </div>
+            <label class="col-sm-1 control-label">{{pair.rate}}</label>
+        </div>
+        <div class="col-sm-3">
+            <h3>{{pair.candidate2.name}} {{pair.candidate2.surname}}</h3>
+            <p ng-bind-html="pair.candidate2.description"></p>
+        </div>
+      </form>
+</div>
+<div class="row">
+   <a ng-click="back()" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Powrót </a>
+   <a ng-click="save()" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-save"></span> Zapisz</a>
+    <!--
+      <a href="#/overview" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-arrow-right"></span> Dalej</a>
+-->
+</div>
+</div>

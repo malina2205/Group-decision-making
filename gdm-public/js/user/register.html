@@ -1,0 +1,37 @@
+<div class = "col-sm-offset-1" ng-controller="LoginCtrl">
+    <h1>Rejestracja </h1>
+    <hr>
+    <form class="form-horizontal" name="registerForm">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Imię i nazwisko</label>
+        <div class="col-sm-4">
+          <input ng-model="name" type="text" required="true" class="form-control" placeholder="imię i nazwisko">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-4">
+          <input ng-model="email" type="email" required="true" name="email" class="form-control" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-4">
+          <input ng-model="password" type="password" required="true" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <span ng-show="exist && !registerForm.$invalid" class="error">Użytkownik o podanym adresie email juz istnieje</span>
+          <span ng-show="registerForm.$invalid" class="error">Uzupełnij poprawnie formularz</span>.
+        </div>
+        <div class="col-sm-offset-3 col-sm-10">
+            <button ng-click="register()" type="submit" class="btn btn-primary" 
+             >
+            Zarejestruj
+            </button>
+        </div>
+      </div>
+    </form>
+    
+</div>

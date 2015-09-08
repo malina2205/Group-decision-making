@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="GDMApp" ng-controller="AppController">
+  <head>
+    <title> GoodChoise! Najlepszy wybór! </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" title="main" ng-href="css/bootstrap-3.3.2-dist/css/flatly.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/ng-wig/ng-wig.css">
+    <!--link rel="stylesheet" type="text/css" href="lib/angular-google-chart-master/style.css"-->
+
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top mynav">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="#/">
+                <h4>
+                <img alt="GoodChoise" class="app-icon" src="img/Boss-2.png">
+                <span class="label">  
+                    GoodChoise! 
+                </span> 
+                </h4>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <div ng-show="true" ng-controller="LoginCtrl">
+                <button ng-click="logout()" ng-show="logged" class="btn btn-info">
+                    Wyloguj
+                </button>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <div class="fixer"></div>
+<div class="container" role="main">
+		 
+<div class="row">
+  
+  <div class="col-sm-offset-1 col-sm-10">
+    <div ng-view></div> 
+    <br><br>
+  </div>
+</div>            
+ 
+    
+    <!--libraries-->
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/ng-storage.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="lib/angular-sanitize.min.js"></script>
+    <script src="lib/ng-wig/ng-wig.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="lib/angular-google-chart-master/ng-google-chart.js"></script>
+
+    <!--app files -->
+    <script src="js/angularApp.js"></script>
+    <script src="js/common/authService.js"></script>
+    <script src="js/common/dataService.js"></script>
+
+<script src="js/common/directive.js"></script>
+
+    <script src="js/overview/overview.js"></script>
+    <script src="js/recrutation/add.js"></script>
+    <script src="js/recrutation/preview.js"></script>
+    <script src="js/user/login.js"></script>
+    <script src="js/user/register.js"></script>
+    <script src="js/recrutation/preferences.js"></script>
+    <script src="js/recrutation/decision.js"></script>
+    <!---->
+
+  </body>
+</html>
+

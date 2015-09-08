@@ -1,0 +1,18 @@
+/**
+* Controller: OverviewCtrl
+*/
+angular.module('GDMApp').controller('OverviewCtrl', 
+  function OverviewCtrl($scope, $location, $http, $localStorage, authService, dataService) {
+	'use strict';
+
+
+
+    $scope.newDecision = function(){
+        $location.path('/addDecision');
+    };
+
+    $scope.remove = function (elem) {
+        dataService.removeRecruitment(elem._id);
+        $scope.init();
+    };
+});

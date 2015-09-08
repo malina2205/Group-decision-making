@@ -1,0 +1,65 @@
+.fixer{
+	height: 80px;
+}
+
+.tile {
+    position: relative;
+    padding: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #EFF0F2;
+    border-radius: 6px;
+}
+
+.app-icon {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.app-name {
+  font-size: 20px;
+  font-family: proxima-nova-sc-osf,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-left: 10px;
+    
+}
+
+.ico-medium{
+    width: 40px;
+    height: 40px;
+}
+
+.form-elem{
+    margin-bottom: 5px;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
+
+.vcenter {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.mynav{
+    height: 70px;
+    line-height: 70px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.pref-label{
+  padding: 5px;
+  cursor: pointer;
+}

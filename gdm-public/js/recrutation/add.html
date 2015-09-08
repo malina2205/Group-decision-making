@@ -1,0 +1,77 @@
+<div ng-controller="AddRecrutationCtrl" ng-init="init()">
+    <h1>Nowa rekrutacja</h1>
+    <form class="form-horizontal" name="addForm">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Nazwa</label>
+    <div class="col-sm-10">
+        <input ng-model="recruitment.title" name="title" type="text" class="form-control" placeholder="Nazwa rekrutacji, np. stanowisko" required>
+        <div class="error" ng-show="addForm.title.$pristine || addForm.title.$invalid"> 
+            Uzupełnij nazwę
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Opis</label>
+    <div class="col-sm-10">
+        <textarea ng-wig="recruitment.description" rows="5"></textarea>
+    </div>
+  </div>
+      
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Kandydaci</label>
+    <div class="col-sm-10">
+        <ul class="list-group" >
+        <!--ng-click="editCandidate(candidate)"    pointer-->
+                <li ng-repeat="candidate in recruitment.candidates"   class="list-group-item clearfix">
+                        {{candidate.name}} {{candidate.surname}}
+                    <span class="pull-right">
+                        <button ng-click="remove(recruitment.candidates, candidate)" class="btn btn-xs btn-danger" type="button">
+                            <span class="glyphicon glyphicon-remove"></span>  
+                        </button>
+                    </span>
+                </li>
+        </ul>
+        <button ng-click="editCandidate()" class="btn btn-info" type="button">
+            <span class="glyphicon glyphicon-plus"></span> Dodaj
+        </button>
+    </div>          
+  </div> 
+      
+    
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Eksperci</label>
+        <div class="col-sm-10">
+        <ul class="list-group" >
+         <!--ng-click="editExpert(expert)"   pointer-->
+                <li ng-repeat="expert in recruitment.experts"  class="list-group-item clearfix">
+                        {{expert.email}} 
+                        <span ng-if="owner._id == expert._id"> (Ty) </span>
+                    <span class="pull-right">
+                        <button ng-click="remove(recruitment.experts, expert)" class="btn btn-xs btn-danger" type="button" 
+                        ng-disabled="owner._id == expert._id">
+                            <span class="glyphicon glyphicon-remove"></span>  
+                        </button>
+                    </span>
+                </li>
+        </ul>
+        <button ng-click="addExpert()" class="btn btn-info" type="button">
+            <span class="glyphicon glyphicon-plus"></span> Dodaj
+        </button>
+    </div> 
+  </div> 
+      
+ 
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button ng-click="cancel()" class="btn btn-danger">Anuluj</button>
+        <button ng-click="addRecruitment()" type="submit" class="btn btn-success"
+              ng-disabled="addForm.title.$pristine && addForm.title.$invalid">
+            Zapisz
+        </button>
+    </div>
+  </div>
+</form> 
+      <br><br>
+    
+</div>

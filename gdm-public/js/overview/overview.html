@@ -1,0 +1,40 @@
+<div ng-controller="OverviewCtrl" ng-init="init()">
+      
+
+<div class="col-xs-3">
+    <div class="tile">
+        <img src="img/svg/kameleon/Round_Icons/Clipboard-Plan.svg" class="tile-image big-illustration"></img>
+        <h3 class="tile-title">Utwórz nową rekrutację</h3>
+        <a class="btn btn-primary btn-large btn-block" ng-click="newDecision()">Dodaj</a>
+    </div>
+</div>
+    <h1>Lista rekrutacji</h1>
+    <div ng-if="recruitments.length <= 0">
+        Aktualnie nie ma żadnych otwartych rekturacji.
+    </div>
+		<div class="table-responsive" ng-if="recruitments.length > 0">
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Tytuł</th>
+                  <th>Data</th>
+                  <th>Usuń</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="decision in recruitments">
+                  <td><a href="#/recrutation/{{decision._id}}">{{decision.title}}</a></td>
+                  <td>{{decision.date | date:'dd.MM.yyyy'}}</td>
+                  <td><button type="button" ng-click="remove(decision)" class="btn btn-danger btn-sm">
+  							  <span class="glyphicon glyphicon-remove"></span> 
+							</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+       </div>
+</div>
+
+

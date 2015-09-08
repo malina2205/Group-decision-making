@@ -1,0 +1,39 @@
+<form class="form-horizontal" name="candidateForm">
+    <div class="modal-header">
+        <h3 class="modal-title">Dane Kandydata</h3>
+    </div>
+    <div class="modal-body">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Imię</label>
+                <div class="col-sm-10">
+                    <input ng-model="candidate.name" type="text" class="form-control" placeholder="Imię" name="name" required>
+                    <div class="error" ng-show="candidateForm.name.$pristine || candidateForm.name.$invalid"> 
+                        Uzupełnij Imię
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Nazwisko</label>
+                <div class="col-sm-10">
+                    <input ng-model="candidate.surname" type="text" class="form-control" placeholder="Nazwisko" name="surname" required>
+                    <div class="error" ng-show="candidateForm.surname.$pristine || candidateForm.surname.$invalid"> 
+                        Uzupełnij Nazwisko
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Opis</label>
+                <div class="col-sm-10">
+                    <textarea ng-wig="candidate.description" rows="5"></textarea>
+                </div>
+            </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-click="ok()" 
+                ng-disabled="candidateForm.name.$pristine || candidateForm.name.$invalid 
+                             || candidateForm.surname.$pristine || candidateForm.surname.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>
